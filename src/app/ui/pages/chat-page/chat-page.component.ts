@@ -13,13 +13,18 @@ import { MessageFormValue } from '@ui/components/molecules/message-form/message-
       [sessionId]="sessionId()"
       [messages]="facade.messages()"
       [loading]="facade.loading()"
+      [sending]="facade.sending()"
+      [loadingOlder]="facade.loadingOlder()"
       [wsConnected]="facade.wsConnected()"
       [searchResults]="facade.searchResults()"
       [searchLoading]="facade.searchLoading()"
+      [searchLoadingMore]="facade.searchLoadingMore()"
       [hasSearched]="hasSearched()"
       [error]="facade.error()"
       (messageSent)="onMessageSent($event)"
+      (loadOlder)="facade.loadOlderMessages()"
       (searched)="onSearch($event)"
+      (searchLoadMore)="facade.loadMoreSearchResults()"
       (searchCleared)="onSearchCleared()"
       (errorDismissed)="facade.clearError()"
     />
@@ -41,10 +46,6 @@ export class ChatPageComponent implements OnInit, OnDestroy {
     this.facade.connectWebSocket(id);
   }
 
-  ngOnDestroy(): void {
-    this.facade.disconnectWebSocket();
-  }
-
   onMessageSent(value: MessageFormValue): void {
     this.facade.sendMessage(value);
   }
@@ -57,5 +58,9 @@ export class ChatPageComponent implements OnInit, OnDestroy {
   onSearchCleared(): void {
     this.hasSearched.set(false);
     this.facade.clearSearch();
+  }
+
+  ngOnDestroy(): void {
+    this.facade.disconnectWebSocket();
   }
 }

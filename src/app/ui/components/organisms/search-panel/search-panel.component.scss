@@ -11,6 +11,8 @@
 
   &__results {
     flex: 1;
+    min-height: 0;
+    max-height: 80vh;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -18,4 +20,10 @@
   }
 
   &__empty { color: #aaa; font-size: 13px; text-align: center; margin-top: 20px; }
+
+  &__loading-more {
+    display: flex;
+    justify-content: center;
+    padding: 8px 0;
+  }
 }

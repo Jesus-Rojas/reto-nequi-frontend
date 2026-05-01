@@ -30,7 +30,7 @@ export interface MessageFormValue {
           <option [value]="Sender.System">system</option>
         </select>
         <app-button [type]="ButtonType.Submit" [disabled]="form.invalid" [loading]="loading()">
-          Enviar
+          {{ loading() ? 'Enviando...' : 'Enviar' }}
         </app-button>
       </div>
     </form>

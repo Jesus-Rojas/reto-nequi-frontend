@@ -13,6 +13,7 @@ export interface GetMessagesParams {
   sender?: MessageSender;
   limit?: number;
   offset?: number;
+  order?: 'asc' | 'desc';
 }
 
 export interface SearchMessagesParams {

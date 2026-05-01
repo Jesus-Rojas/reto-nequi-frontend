@@ -19,7 +19,12 @@ import { MessageFormComponent, MessageFormValue } from '@ui/components/molecules
 
       <div class="chat-layout__body">
         <div class="chat-layout__main">
-          <app-chat-window [messages]="messages()" [loading]="loading()" />
+          <app-chat-window
+            [messages]="messages()"
+            [loading]="loading()"
+            [loadingOlder]="loadingOlder()"
+            (loadOlder)="loadOlder.emit()"
+          />
           <app-message-form
             [sessionId]="sessionId()"
             [loading]="sending()"
@@ -29,9 +34,11 @@ import { MessageFormComponent, MessageFormValue } from '@ui/components/molecules
         <app-search-panel
           [results]="searchResults()"
           [loading]="searchLoading()"
+          [loadingMore]="searchLoadingMore()"
           [hasSearched]="hasSearched()"
           (searched)="searched.emit($event)"
           (cleared)="searchCleared.emit()"
+          (loadMore)="searchLoadMore.emit()"
         />
       </div>
 
@@ -49,15 +56,19 @@ export class ChatTemplate {
   sessionId = input.required<string>();
   messages = input<Message[]>([]);
   loading = input(false);
+  loadingOlder = input(false);
   sending = input(false);
   wsConnected = input(false);
   searchResults = input<Message[]>([]);
   searchLoading = input(false);
+  searchLoadingMore = input(false);
   hasSearched = input(false);
   error = input<string | null>(null);
 
   messageSent = output<MessageFormValue>();
+  loadOlder = output<void>();
   searched = output<string>();
+  searchLoadMore = output<void>();
   searchCleared = output<void>();
   errorDismissed = output<void>();
 }

@@ -28,6 +28,7 @@ export class HttpMessageAdapter implements MessageRepository {
     if (params.sender) httpParams = httpParams.set('sender', params.sender);
     if (params.limit != null) httpParams = httpParams.set('limit', params.limit.toString());
     if (params.offset != null) httpParams = httpParams.set('offset', params.offset.toString());
+    if (params.order) httpParams = httpParams.set('order', params.order);
 
     return this.http
       .get<{ status: string; data: unknown[]; pagination: unknown }>(
