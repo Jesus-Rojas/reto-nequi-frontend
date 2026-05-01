@@ -1,0 +1,40 @@
+.home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e8144d 0%, #ff6090 100%);
+
+  &__card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 40px 36px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__logo { width: 80px; }
+
+  &__title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #e8144d;
+    margin: 0;
+  }
+
+  &__subtitle { font-size: 14px; color: #777; margin: 0; }
+
+  &__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    app-button { width: 100%; }
+  }
+}

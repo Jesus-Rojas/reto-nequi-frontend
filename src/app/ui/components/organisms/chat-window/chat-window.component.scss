@@ -1,0 +1,23 @@
+.chat-window {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: #fafafa;
+
+  &__loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__empty {
+    text-align: center;
+    color: #aaa;
+    font-size: 14px;
+    margin-top: 40px;
+  }
+}

@@ -1,0 +1,21 @@
+.search-panel {
+  width: 320px;
+  border-left: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 12px;
+  background: #fff;
+
+  &__title { font-size: 15px; font-weight: 700; color: #333; margin: 0; }
+
+  &__results {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  &__empty { color: #aaa; font-size: 13px; text-align: center; margin-top: 20px; }
+}

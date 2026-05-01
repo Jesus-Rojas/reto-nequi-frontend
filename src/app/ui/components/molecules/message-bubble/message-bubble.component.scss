@@ -1,0 +1,22 @@
+.bubble {
+  max-width: 72%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+
+  &--user   { align-self: flex-end; background: #e8144d; color: #fff; }
+  &--system { align-self: flex-start; background: #f4f4f4; color: #333; }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+
+  &__time { font-size: 11px; opacity: 0.6; }
+
+  &__content { margin: 0; font-size: 14px; line-height: 1.5; }
+
+  &__meta { font-size: 11px; margin-top: 6px; opacity: 0.55; }
+}

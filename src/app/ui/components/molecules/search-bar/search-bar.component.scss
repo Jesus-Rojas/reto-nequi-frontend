@@ -1,0 +1,7 @@
+.search-bar {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+
+  app-input { flex: 1; }
+}
