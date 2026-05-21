@@ -1,0 +1,25 @@
+# Copia este archivo a terraform.tfvars y ajusta los valores.
+# NUNCA subas terraform.tfvars al repositorio si contiene secretos.
+
+project_name = "reto-nequi"
+environment  = "dev"
+aws_region   = "us-east-1"
+
+# Ruta al directorio raíz del frontend (donde está el package.json)
+frontend_src_dir = ".."
+
+# Ruta al directorio con el build de Angular (generado por ng build)
+build_dir = "../dist/frontend/browser"
+
+# Base href de la SPA. Dejar vacío para calcularlo automáticamente:
+#   - LocalStack → /<bucket-name>/
+#   - AWS real   → /
+# Sobreescribe solo si necesitas un valor personalizado.
+base_href = ""
+
+# CloudFront — PriceClass_100 cubre US + Europa (más económico)
+# Opciones: PriceClass_100 | PriceClass_200 | PriceClass_All
+cloudfront_price_class = "PriceClass_100"
+
+# Archivo raíz de la SPA (no cambiar para Angular)
+default_root_object = "index.html"
